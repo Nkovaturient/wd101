@@ -8,6 +8,34 @@ btn.addEventListener("click", (e) => {
   const password = document.getElementById("password").value;
   const dob = document.getElementById("dob").value;
   const terms = document.getElementById("agree").checked;
+  
+  let errorMessage = document.getElementById('error-message');
+  errorMessage.textContent = '';
+  
+  // Email validation 
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    errorMessage.textContent = '⚠ Please enter a valid email address! ⚠';
+    return;
+  }
+
+   // Age validation (between 18 and 55 years old)
+   const birthDate = new Date(dob);
+   const today = new Date();
+   
+   let age = today.getFullYear() - birthDate.getFullYear();
+   let monthDifference = today.getMonth() - birthDate.getMonth();
+   if (
+     monthDifference < 0 ||
+     (monthDifference === 0 && today.getDate() < birthDate.getDate())
+   ) {
+     age--;
+   }
+ 
+   if (age < 18 || age > 55) {
+     errorMessage.textContent = '⚠ You must be between 18 and 55 years old to register! ⚠';
+     return;
+   }
 
   const registered = {
     name,
@@ -19,8 +47,8 @@ btn.addEventListener("click", (e) => {
 
   storeUserEntry(registered);
   document.getElementById("entry-form").reset();
-  
   addEntryToTable(registered);
+  alert('Congo! 🎉🎊You were registered successfully!');
 });
 
 const storeUserEntry = (entries) => {
