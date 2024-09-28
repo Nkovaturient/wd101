@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="my-5 p-4">
+    <div
+      class="form-wrapper rounded-md shadow-lg shadow-cyan-500/50 hover:border-t-4 py-8 border-x-indigo-500 border-emerald-500/50"
+    >
+      <form id="entry-form" class="mb-5">
+        <!-- username -->
+
+        <label
+          for="name"
+          class="text-md w-40 inline-block font-medium leading-5 text-indigo-700"
+          >Enter your Username:
+        </label>
+        <input
+          class="form-input text-emerald-700 px-4 py-3 border-4 border-rose-500 rounded-full mb-8 leading-6 placeholder-gray-500"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter full name"
+          required
+        />
+        <br />
+
+        <!-- email -->
+        <label
+          for="email"
+          class="text-md w-40 inline-block font-medium leading-5 text-indigo-700"
+          >Enter your Email:
+        </label>
+        <input
+          class="form-input text-emerald-700 px-4 py-3 border-4 border-rose-500 rounded-full mb-8 leading-6 placeholder-gray-500"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter  email"
+          required
+        />
+        <br />
+
+        <!-- pasword -->
+        <label
+          for="password"
+          class="text-md w-40 inline-block font-medium leading-5 text-indigo-700"
+          >Enter a strong Password:
+        </label>
+        <input
+          class="form-input text-emerald-700 px-4 py-3 border-4 border-rose-500 rounded-full mb-8 leading-6 placeholder-gray-500"
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          placeholder="Enter a 8-digit password"
+          required
+        />
+        <br />
+
+        <!-- Dob -->
+        <label
+          for="dob"
+          class="text-md w-40 inline-block font-medium leading-5 text-indigo-700"
+          >Date of Birth:
+        </label>
+        <input
+          class="form-input text-emerald-700 px-4 py-3 border-4 border-rose-500 rounded-full mb-8 leading-6 placeholder-gray-500"
+          type="date"
+          name="dob"
+          min="1969-09-29"
+          max="2006-09-29"
+          id="dob"
+          required
+        />
+        <br />
+
+        <!-- Designation radio -->
+        <label
+          for="std"
+          class="text-md w-40 inline-block font-medium leading-5 text-indigo-700 mb-5"
+          >Are you a Student?</label
+        >
+
+        <input
+          class="form-radio px-4 py-3 rounded-full"
+          value="yes"
+          type="radio"
+          name="std"
+          id="yes"
+          checked
+        />
+        <label for="yes">Yes</label>
+        <input class="form-radio" type="radio" value="no" name="std" id="no" />
+        <label for="no">No</label> <br />
+
+        <!--T&C checkboxes -->
+        <input
+          type="checkbox"
+          class="form-checkbox border-4 mr-4 border-rose-500 rounded text-indigo-500"
+          name="terms"
+          id="agree"
+          value="accept"
+        />
+        <label
+          for="agree"
+          class="text-md w-40 whitespace-nowrap inline-block font-medium leading-5 text-indigo-500"
+          >I, hereby, accept all Terms& conditions</label
+        >
+        <br />
+
+        <!-- submit btn -->
+        <button
+          type="submit"
+          id="btn"
+          class="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-4 hover:shadow-blue-500/40 py-2 px-2 rounded"
+        >
+          Submit
+        </button>
+      </form>
+
+     
+    </div>
+     <!-- entries table -->
+     <div class="entries-wrapper shadow-lg shadow-cyan-500/50 hover:border-t-4 border-4 border-rose-500">
+      <div class="entries-header">
+        <h2 class="text-bold text-3xl text-center  mb-4">Entries List</h2>
+      </div>
+      <table class="border-2 border-slate-500 p-8">
+        <thead class="my-4 py-4 bg-cyan-500 shadow-lg shadow-cyan-500/50 p-8">
+          <tr>
+            <th scope="col" >Name</th>
+            <th scope="col">Email</th>
+            <th scope="col" >Password</th>
+            <th scope="col">DOB</th>
+            <th scope="col" >Accepted Terms?</th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+          
+        </tbody>
+      </table>
+     </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
