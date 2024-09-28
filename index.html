@@ -19,8 +19,8 @@
       class="form-wrapper rounded-md shadow-lg shadow-cyan-500/50 hover:border-t-4 py-8 border-x-indigo-500 border-emerald-500/50"
     >
       <form id="entry-form" class="mb-5">
+        <p id="error-message" style="color: yellow;"></p> <br/>
         <!-- username -->
-
         <label
           for="name"
           class="text-md w-40 inline-block font-medium leading-5 text-indigo-700"
@@ -47,7 +47,7 @@
           type="email"
           name="email"
           id="email"
-          placeholder="Enter  email"
+          placeholder="Enter a valid email"
           required
         />
         <br />
@@ -79,8 +79,6 @@
           class="form-input text-emerald-700 px-4 py-3 border-4 border-rose-500 rounded-full mb-8 leading-6 placeholder-gray-500"
           type="date"
           name="dob"
-          min="1969-09-29"
-          max="2006-09-29"
           id="dob"
           required
         />
