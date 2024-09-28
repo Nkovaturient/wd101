@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: #FFDFB4;
+    background-color: #111827;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+}
+.form-wrapper, .entries-wrapper{
+    padding: 2.1rem;
+    margin: 1.56rem;
+
+}
+.table-row{
+    margin: 1.2rem;
+    padding: 1.4rem;
+    text-align: center;
+    border-spacing: 14px;
+}
+.table-row td{
+    padding: 10px; 
+  text-align: center; 
+}
